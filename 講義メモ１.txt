@@ -1,0 +1,18 @@
+python -m venv venv
+
+.\venv\Scripts\Activate.ps1
+
+deactivate
+
+PowerShell Set-ExecutionPolicy RemoteSigned -scope currentuser
+
+pip freeze > requirements.txt
+
+python -m pip install django==4.2.2
+
+django-admin startproject django_app
+
+python manage.py startapp hello
+
+python manage.py runserver
+
